@@ -13,6 +13,22 @@ public class SubArray {
      * @return a sub-array of nums containing the values between start and end.
      */
     public int[] sub(int[] nums, int start, int end){
-        return null;
-    }
+            // Check for valid input
+            if (nums == null || start < 0 || end > nums.length || start >= end) {
+                throw new IllegalArgumentException("Invalid start or end index.");
+            }
+            
+            // Calculate the length of the new array
+            int length = end - start;
+            
+            // Create the new array
+            int[] subArray = new int[length];
+            
+            // Copy elements from the original array to the new array
+            for (int i = 0; i < length; i++) {
+                subArray[i] = nums[start + i];
+            }
+            
+            return subArray;
+        }
 }
